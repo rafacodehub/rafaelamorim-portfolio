@@ -5,7 +5,7 @@ Modern developer portfolio focused on premium UI, smooth animations and interact
 ## Preview
 
 🌐 Live Website  
-:contentReference[oaicite:0]{index=0}
+https://rafacodehub.github.io/rafaelamorim-portfolio/
 
 ---
 
