@@ -1,531 +1,109 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rafael Amorim | Portfolio</title>
 
-  <title>LegalScan AI | By Rafacodehub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
+<body>
+  <div class="blur blur-1"></div>
+  <div class="blur blur-2"></div>
+  <div class="grain"></div>
 
-<body class="theme-dark-purple">
-  <aside class="sidebar">
-    <div class="brand brand-text-only"><div><h1>LegalScan <span>AI</span></h1><p>By Rafacodehub</p></div></div>
-
-    <nav class="menu">
-      <button class="menu-item active" data-page="dashboard">
-        <svg viewBox="0 0 24 24"><path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6v-9h-6v9Zm0-16v5h6V4h-6Z"/></svg>
-        <span>Dashboard</span>
-      </button>
-
-      <button class="menu-item" data-page="history">
-        <svg viewBox="0 0 24 24"><path d="M12 8v5l4 2 .8-1.6-3-1.5V8H12Zm0-6a10 10 0 1 0 9.9 11.5h-2.1A8 8 0 1 1 18.5 7L16 9.5h6V3.5L20 5.6A10 10 0 0 0 12 2Z"/></svg>
-        <span>Histórico</span>
-      </button>
-
-      <button class="menu-item" data-page="templates">
-        <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6V2Zm8 1.8V8h4.2L14 3.8ZM8 11h8v2H8v-2Zm0 4h8v2H8v-2Z"/></svg>
-        <span>Modelos</span>
-      </button>
-
-      <button class="menu-item" data-page="reports">
-        <svg viewBox="0 0 24 24"><path d="M5 3h14v18H5V3Zm3 12h2V9H8v6Zm4 0h2V6h-2v9Zm4 0h2v-4h-2v4ZM8 18h8v1H8v-1Z"/></svg>
-        <span>Relatórios</span>
-      </button>
-
-      <button class="menu-item" data-page="settings">
-        <svg viewBox="0 0 24 24"><path d="M19.4 13.5c.1-.5.1-1 .1-1.5s0-1-.1-1.5l2-1.5-2-3.5-2.4 1a8 8 0 0 0-2.6-1.5L14 2h-4l-.4 2.5A8 8 0 0 0 7 6L4.6 5 2.6 8.5l2 1.5c-.1.5-.1 1-.1 1.5s0 1 .1 1.5l-2 1.5 2 3.5 2.4-1a8 8 0 0 0 2.6 1.5L10 22h4l.4-2.5A8 8 0 0 0 17 18l2.4 1 2-3.5-2-1.5ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/></svg>
-        <span>Configurações</span>
-      </button>
-    </nav>
-
-    <div class="upgrade" id="upgradeBox">
-      <h3>Upgrade para Pro</h3>
-      <p>Desbloqueie análises ilimitadas, relatórios avançados e recursos premium.</p>
-      <button id="upgradeBoxBtn">Upgrade Agora</button>
-    </div>
-
-    <div class="profile-menu" id="profileMenu">
-      <button id="upgradePlanBtn">Atualizar plano</button>
-      <button id="profileSettingsBtn">Configurações</button>
-      <button id="helpBtn">Ajuda</button>
-      <button id="logoutBtn">Terminar sessão</button>
-    </div>
-
-    <button class="profile" id="profileButton">
-      <div class="avatar">R</div>
-      <div>
-        <strong>Rafacodehub</strong>
-        <p>Plano Gratuito</p>
-      </div>
-      <span class="chevron">⌄</span>
-    </button>
-
-    <button class="login-profile hidden" id="loginProfileBtn">
-      Fazer Login
-    </button>
-  </aside>
-
-  <main class="app">
-    <header class="topbar">
-      <div class="warning">
-        <svg viewBox="0 0 24 24"><path d="M12 2 1.5 21h21L12 2Zm1 16h-2v-2h2v2Zm0-4h-2V9h2v5Z"/></svg>
-        <div>
-          <strong>Projeto demonstrativo para fins de portfólio apenas.</strong>
-          <p>Nenhum documento é armazenado ou processado externamente.</p>
-        </div>
-      </div>
-
-      <div class="top-actions">
-        <button class="ghost" id="howItWorksBtn">Como funciona</button>
-        <button class="primary" id="newAnalysisBtn">Nova Análise</button>
-      </div>
-    </header>
-
-    <section class="page active" id="welcomePage">
-      <div class="welcome-shell">
-        <div class="welcome-hero">
-          <span class="eyebrow">Legal Intelligence Platform</span>
-          <h2>Bem-vindo ao LegalScan AI</h2>
-          <p>Envie contratos, identifique riscos e gere relatórios profissionais em uma experiência demonstrativa, segura e local.</p>
-          <button class="primary" id="startWelcomeBtn">Iniciar análise</button>
+  <main class="container">
+    <section class="window reveal">
+      <div class="top-bar">
+        <div class="circles">
+          <span class="red"></span>
+          <span class="yellow"></span>
+          <span class="green"></span>
         </div>
 
-        <div class="quick-actions">
-          <button class="quick-card" data-action="start">
-            <strong>Nova análise</strong>
-            <span>Envie ou cole um contrato para iniciar.</span>
-          </button>
+        <nav class="nav-menu" aria-label="Main navigation">
+          <a href="#home">Work</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-          <button class="quick-card" data-action="templates">
-            <strong>Modelo de contrato</strong>
-            <span>Baixe o contrato de locação para testar.</span>
-          </button>
-
-          <button class="quick-card" data-action="history">
-            <strong>Histórico</strong>
-            <span>Acompanhe uploads e riscos detectados.</span>
-          </button>
-        </div>
+        <div class="window-title">rafacodehub/portfolio</div>
       </div>
-    </section>
 
-    <section class="page" id="dashboardPage">
-      <section class="content">
-        <div class="panel upload-panel">
-          <h2>1. Envie ou cole seu contrato</h2>
-          <p>Cole o texto do contrato ou faça upload do arquivo.</p>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <span class="tag">Rafael Amorim</span>
 
-          <div class="tabs">
-            <button class="tab active" data-tab="paste">Colar Texto</button>
-            <button class="tab" data-tab="upload">Upload de Arquivo</button>
+          <p class="subtitle">Data Analyst & Legal Insights</p>
+
+          <h1>
+            I build systems,<br />
+            interfaces &<br />
+            solutions.
+          </h1>
+
+          <p class="description">Node.js • SQL • Java</p>
+
+          <div class="buttons">
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="https://github.com/rafacodehub" target="_blank" class="btn-secondary">Github</a>
           </div>
-
-          <div class="tab-content active" id="pasteTab">
-            <textarea id="contractText" placeholder="Cole aqui o texto do contrato..."></textarea>
-          </div>
-
-          <div class="tab-content" id="uploadTab">
-            <label class="upload-box" for="contractFile">
-              <svg viewBox="0 0 24 24"><path d="M12 3 6 9h4v6h4V9h4l-6-6ZM5 19h14v2H5v-2Z"/></svg>
-              <strong>Enviar contrato</strong>
-              <p>Formatos aceitos: .docx e .txt</p>
-              <small id="selectedFileName">Nenhum arquivo selecionado</small>
-            </label>
-            <input type="file" id="contractFile" accept=".docx,.txt" hidden />
-          </div>
-
-          <div class="textarea-footer">
-            <span>Formatos suportados: .docx, .txt</span>
-            <span id="charCount">0 caracteres</span>
-          </div>
-
-          <button class="analyze-btn" id="analyzeBtn">Analisar Contrato</button>
         </div>
 
-        <div class="results-area is-empty" id="reportArea">
-          <div class="empty-analysis-card" id="emptyAnalysisCard">
-            <div>
-              <span class="empty-icon">◇</span>
-              <h2>Envie um contrato para iniciar</h2>
-              <p>Após o upload ou colagem do texto, os resultados aparecerão aqui com score, insights e informações extraídas.</p>
-            </div>
-          </div>
+        <aside class="hero-photo-wrap" aria-label="Rafael Amorim profile photo">
+          <div class="photo-orbit"></div>
+          <img src="Assets/Imagem.jpg" alt="Rafael Amorim" class="hero-photo" />
+        </aside>
+      </section>
 
-          <div class="analysis-results-content" id="analysisResultsContent">
-            <div class="results-header">
-              <div>
-                <h2>2. Resultados da Análise</h2>
-                <p>Os resultados aparecem após o envio/análise do contrato.</p>
-              </div>
+      <section class="projects reveal" id="projects">
+        <div class="section-heading">
+          <span>Selected Work</span>
+          <h2>Selected Projects</h2>
+        </div>
 
-              <button class="ghost" id="downloadReportBtn">Baixar Relatório</button>
-            </div>
+        <div class="project-grid">
+          <a href="https://rafacodehub.github.io/yourbank-fintech/" target="_blank" class="card project-link" aria-label="Open Your Bank project">
+            <span>01</span>
+            <h3>Your Bank</h3>
+            <p>Banking landing page focused on premium UI, modern structure and user experience.</p>
+            <span class="open-label">Open project <span class="external-icon" aria-hidden="true"></span></span>
+          </a>
 
-          <div class="cards-grid">
-            <div class="result-card score-card">
-              <h3>Pontuação de Risco</h3>
-              <div class="score-circle" id="scoreCircle">
-                <span id="riskScore">0</span>
-                <small>/100</small>
-              </div>
-              <strong id="riskLabel">Aguardando análise</strong>
-            </div>
+          <a href="https://rafacodehub.github.io/dashboard-analytics/" target="_blank" class="card project-link" aria-label="Open Dashboard Analytics project">
+            <span>02</span>
+            <h3>Dashboard Analytics</h3>
+            <p>Real-time financial dashboard using Node.js, SQL and AI-based benchmark logic.</p>
+            <span class="open-label">Open project <span class="external-icon" aria-hidden="true"></span></span>
+          </a>
 
-            <div class="result-card">
-              <h3>Nível de Risco</h3>
-              <div class="risk-level">
-                <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3Zm0 2.2L18 6.5V11c0 4-2.4 7.7-6 8.8C8.4 18.7 6 15 6 11V6.5l6-2.3Z"/></svg>
-                <strong id="riskLevel">—</strong>
-              </div>
-              <p id="riskDescription">
-                Envie um contrato para gerar o nível de risco e os pontos de atenção.
-              </p>
 
-              <div class="review" id="reviewStatus">Aguardando documento</div>
-            </div>
-
-            <div class="result-card">
-              <h3>Confiança da Análise</h3>
-              <div class="progress">
-                <div id="confidenceBar"></div>
-              </div>
-              <strong id="confidenceValue">0%</strong>
-              <p>Baseado na clareza, tamanho e termos identificados no contrato.</p>
-            </div>
-          </div>
-
-          <div class="details-grid">
-            <div class="result-card insights">
-              <h3>Principais Insights</h3>
-              <div id="insightsList" class="empty-state">Nenhum insight gerado ainda.</div>
-            </div>
-
-            <div class="result-card info">
-              <h3>Informações Extraídas</h3>
-              <div id="extractedInfo" class="empty-state">Nenhuma informação extraída ainda.</div>
-            </div>
-          </div>
-          </div>
+          <a href="https://rafacodehub.github.io/legalscan-ai/" target="_blank" class="card project-link" aria-label="Open LegalScan AI project">
+            <span>03</span>
+            <h3>LegalScan AI</h3>
+            <p>AI-powered legal contract analysis platform with executive insights and premium SaaS experience.</p>
+            <span class="open-label">Open project <span class="external-icon" aria-hidden="true"></span></span>
+          </a>
         </div>
       </section>
 
-      <section class="clauses result-card">
-        <h3>Cláusulas Detectadas</h3>
-        <div class="chips" id="clausesDetected">
-          <span class="muted">Aguardando análise</span>
+      <section class="contact reveal" id="contact">
+        <div class="section-heading">
+          <span>Contact</span>
+          <h2>Let's Connect</h2>
+        </div>
+
+        <div class="links">
+          <a href="https://github.com/rafacodehub" target="_blank">GitHub <span class="external-icon" aria-hidden="true"></span></a>
+          <a href="https://www.linkedin.com/in/rafael-amorim-282419288" target="_blank">LinkedIn <span class="external-icon" aria-hidden="true"></span></a>
         </div>
       </section>
     </section>
-
-    <section class="page" id="historyPage">
-      <div class="page-card">
-        <div class="page-title">
-          <div>
-            <h2>Histórico de Uploads</h2>
-            <p>Arquivos analisados nesta demo local.</p>
-          </div>
-          <button class="ghost" id="clearHistoryBtn">Limpar histórico</button>
-        </div>
-
-        <div class="filters-bar">
-          <span>Clique nos títulos da tabela para ordenar.</span>
-        </div>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th data-history-sort="fileName">Arquivo</th>
-                <th data-history-sort="date">Data</th>
-                <th data-history-sort="time">Hora</th>
-                <th data-history-sort="user">Usuário</th>
-                <th data-history-sort="risk">Risco</th>
-              </tr>
-            </thead>
-            <tbody id="historyTable">
-              <tr><td colspan="5">Nenhum upload registrado.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="page" id="templatesPage">
-      <div class="page-card">
-        <div class="page-title">
-          <div>
-            <h2>Modelos de Contrato</h2>
-            <p>Baixe o contrato modelo usado para testar o LegalScan AI.</p>
-          </div>
-        </div>
-
-        <div class="template-card">
-          <div>
-            <h3>Contrato de Locação Residencial</h3>
-            <p>Modelo com cláusulas de multa, rescisão, venda do imóvel, confidencialidade e obrigações das partes.</p>
-          </div>
-
-          <a class="primary link-btn" href="assets/CONTRATO%20MODELO%20LEGALSCAN.docx" download>Baixar Modelo</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="page" id="reportsPage">
-      <div class="page-card">
-        <div class="page-title">
-          <div>
-            <h2>Relatórios</h2>
-            <p>Gere um PDF da análise atual e acompanhe o histórico dos relatórios criados.</p>
-          </div>
-          <div class="page-actions">
-            <button class="ghost" id="clearReportsBtn">Limpar relatórios</button>
-            <button class="primary" id="generateReportFromPage">Gerar PDF</button>
-          </div>
-        </div>
-
-        <div class="filters-bar">
-          <span>Clique nos títulos da tabela para ordenar.</span>
-        </div>
-
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th data-report-sort="name">Relatório</th>
-                <th data-report-sort="date">Data</th>
-                <th data-report-sort="time">Hora</th>
-                <th data-report-sort="user">Usuário</th>
-                <th>Download</th>
-              </tr>
-            </thead>
-            <tbody id="reportsTable">
-              <tr><td colspan="5">Nenhum relatório gerado.</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="page" id="settingsPage">
-      <div class="page-card settings-page">
-        <div class="page-title">
-          <div>
-            <h2>Configurações</h2>
-            <p>Gerencie preferências da conta, notificações, privacidade, pagamentos e temas.</p>
-          </div>
-        </div>
-
-        <div class="settings-grid">
-          <div class="settings-list">
-            <button class="settings-tab active" data-settings="account">Conta</button>
-            <button class="settings-tab" data-settings="notifications">Notificações</button>
-            <button class="settings-tab" data-settings="privacy">Privacidade</button>
-            <button class="settings-tab" data-settings="payment">Pagamento</button>
-            <button class="settings-tab" data-settings="advanced">Configurações avançadas</button>
-          </div>
-
-          <div class="settings-content">
-            <div class="settings-panel active" id="accountSettings">
-              <h3>Conta</h3>
-              <p>Usuário: Rafacodehub</p>
-              <p id="accountPlanText">Plano atual: Gratuito</p>
-              <button class="primary" id="accountUpgradeBtn">Atualizar plano</button>
-            </div>
-
-            <div class="settings-panel" id="notificationsSettings">
-              <h3>Notificações</h3>
-              <label><input type="checkbox" checked> Receber alertas de análises concluídas</label>
-              <label><input type="checkbox" checked> Receber avisos sobre relatórios gerados</label>
-            </div>
-
-            <div class="settings-panel" id="privacySettings">
-              <h3>Privacidade</h3>
-              <p>Nenhum documento é armazenado ou processado externamente nesta demo.</p>
-              <label><input type="checkbox" checked> Exibir aviso de privacidade ao iniciar</label>
-            </div>
-
-            <div class="settings-panel" id="paymentSettings">
-              <h3>Pagamento</h3>
-              <p>Área demonstrativa para upgrade e gerenciamento de assinatura.</p>
-              <button class="ghost">Ver planos disponíveis</button>
-            </div>
-
-            <div class="settings-panel" id="advancedSettings">
-              <h3>Configurações avançadas</h3>
-              <p>Escolha um tema imersivo para todo o LegalScan AI.</p>
-
-              <div class="theme-options">
-                <button class="theme-card active" data-theme="theme-dark-purple"><span></span>Escuro com roxo</button>
-                <button class="theme-card" data-theme="theme-classic-purple"><span></span>Padrão roxo</button>
-                <button class="theme-card" data-theme="theme-blue-tech"><span></span>Azul tecnológico</button>
-                <button class="theme-card" data-theme="theme-emerald-law"><span></span>Verde jurídico</button>
-                <button class="theme-card" data-theme="theme-amber-exec"><span></span>Âmbar executivo</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  
-    <footer class="app-footer">
-      <strong>LegalScan AI</strong>
-      <span>Demo privacy-first • Nenhum documento é armazenado externamente • By Rafacodehub</span>
-    </footer>
   </main>
-  <button class="mobile-fab" id="mobileFab">+</button>
-
-  <div class="modal" id="howModal">
-    <div class="modal-card">
-      <button class="modal-close" id="closeModal">×</button>
-
-      <div class="slide active">
-        <span class="slide-icon">1</span>
-        <h2>Escolha o método</h2>
-        <p>Cole o texto do contrato ou selecione a aba “Upload de Arquivo”.</p>
-      </div>
-
-      <div class="slide">
-        <span class="slide-icon">2</span>
-        <h2>Envie o documento</h2>
-        <p>Selecione um arquivo .docx ou .txt. A demo lê o conteúdo localmente no navegador.</p>
-      </div>
-
-      <div class="slide">
-        <span class="slide-icon">3</span>
-        <h2>Analise o contrato</h2>
-        <p>Clique em “Analisar Contrato” para gerar riscos, insights e cláusulas detectadas.</p>
-      </div>
-
-      <div class="slide">
-        <span class="slide-icon">4</span>
-        <h2>Baixe o relatório</h2>
-        <p>O botão “Baixar Relatório” gera um PDF premium com resumo e pontos de atenção.</p>
-      </div>
-
-      <div class="modal-actions">
-        <button class="ghost" id="prevSlide">Voltar</button>
-        <div class="dots" id="slideDots"></div>
-        <button class="primary" id="nextSlide">Próximo</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="loginModal">
-    <div class="modal-card login-card">
-      <button class="modal-close" id="closeLoginModal">×</button>
-
-      <h2>Entrar no LegalScan AI</h2>
-      <p>Acesse novamente o perfil Rafacodehub.</p>
-
-      <label>
-        E-mail ou usuário
-        <input id="loginUser" type="text" placeholder="rafacodehub" />
-      </label>
-
-      <label>
-        Senha
-        <input id="loginPassword" type="password" placeholder="Digite sua senha" />
-      </label>
-
-      <button class="primary full" id="submitLoginBtn">Fazer Login</button>
-      <button class="text-btn" id="forgotPasswordBtn">Esqueci minha senha</button>
-    </div>
-  </div>
-
-  <div class="modal" id="forgotModal">
-    <div class="modal-card small-card">
-      <button class="modal-close" id="closeForgotModal">×</button>
-      <h2>Redefinição enviada</h2>
-      <p>O link de redefinição de senha foi enviado para o e-mail cadastrado.</p>
-      <button class="primary full" id="finishForgotBtn">Entendi</button>
-    </div>
-  </div>
-
-  <div class="modal" id="planModal">
-    <div class="modal-card plan-card">
-      <button class="modal-close" id="closePlanModal">×</button>
-      <h2>Escolha seu plano</h2>
-      <p>Selecione uma opção para atualizar o perfil nesta demo.</p>
-
-      <div class="plans-grid">
-        <button class="plan-option" data-plan="Plano Gratuito">
-          <strong>Gratuito</strong>
-          <span>Ideal para testar a interface.</span>
-          <small>1 análise demonstrativa • Upload local • Relatório básico</small>
-        </button>
-
-        <button class="plan-option featured" data-plan="Plano Pro">
-          <strong>Pro</strong>
-          <span>Para análises mais completas.</span>
-          <small>Análises ilimitadas • Histórico avançado • Relatórios premium • Temas extras</small>
-        </button>
-
-        <button class="plan-option" data-plan="Plano Premium">
-          <strong>Premium</strong>
-          <span>Tudo do Pro com recursos enterprise.</span>
-          <small>Exportação avançada • Biblioteca de cláusulas • Suporte prioritário • Auditoria</small>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div class="loading-overlay" id="analysisLoading">
-    <div class="loading-card">
-      <div class="loading-ring"></div>
-      <h2>Analisando contrato</h2>
-      <ul class="loading-steps">
-        <li data-step="0">Upload do documento</li>
-        <li data-step="1">Leitura do conteúdo</li>
-        <li data-step="2">Interpretação jurídica</li>
-        <li data-step="3">Cálculo de risco</li>
-        <li data-step="4">Geração dos insights</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="modal onboarding-modal active" id="onboardingModal">
-    <div class="modal-card onboarding-card">
-      <button class="modal-close" id="skipOnboardingBtn">×</button>
-
-      <div class="onboarding-slide active">
-        <span class="eyebrow">Primeiro acesso</span>
-        <h2>Bem-vindo ao LegalScan AI</h2>
-        <p>Uma experiência demonstrativa para análise contratual com foco em risco, cláusulas e relatórios profissionais.</p>
-      </div>
-
-      <div class="onboarding-slide">
-        <span class="eyebrow">Highlights</span>
-        <h2>Análise inteligente</h2>
-        <p>Envie um contrato, acompanhe o processamento em etapas e veja insights jurídicos simulados com visual SaaS.</p>
-      </div>
-
-      <div class="onboarding-slide">
-        <span class="eyebrow">Tutorial</span>
-        <h2>Como usar</h2>
-        <p>Faça upload do modelo, clique em analisar e gere um PDF premium com resumo executivo, riscos e cláusulas detectadas.</p>
-      </div>
-
-      <div class="onboarding-slide">
-        <span class="eyebrow">Criar conta</span>
-        <h2>Crie sua conta demo</h2>
-        <p>Digite os dados para entrar na conta Rafacodehub.</p>
-        <input id="onboardUser" type="text" placeholder="E-mail ou usuário">
-        <input id="onboardPassword" type="password" placeholder="Senha">
-      </div>
-
-      <div class="onboarding-actions">
-        <button class="ghost" id="onboardingPrev">Voltar</button>
-        <div class="dots onboarding-dots" id="onboardingDots"></div>
-        <button class="primary" id="onboardingNext">Próximo</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="toast" id="toast"></div>
 
   <script src="script.js"></script>
 </body>
