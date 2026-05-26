@@ -794,3 +794,91 @@ body{
         font-size:30px;
     }
 }
+
+/* =============================
+   Mobile refinement v5
+   - centraliza menu fixo
+   - mantém links do contato em tamanho premium
+   ============================= */
+@media(max-width:700px){
+    .top-bar{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:auto auto;
+        align-items:center;
+        justify-items:stretch;
+        gap:18px 10px;
+        padding:22px 18px 26px;
+    }
+
+    .circles{
+        grid-column:1;
+        grid-row:1;
+        justify-self:start;
+    }
+
+    .window-title{
+        grid-column:2;
+        grid-row:1;
+        justify-self:end;
+        text-align:right;
+    }
+
+    .nav-menu{
+        grid-column:1 / -1;
+        grid-row:2;
+        justify-self:center;
+        width:auto;
+        max-width:none;
+        overflow:visible;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:nowrap;
+        margin:0 auto;
+        touch-action:auto;
+    }
+
+    .nav-menu a{
+        flex:0 0 auto;
+        white-space:nowrap;
+        font-size:13px;
+        padding:9px 16px;
+    }
+
+    .hero-photo-wrap{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .tag{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .contact .links{
+        gap:22px;
+    }
+
+    .contact .links a{
+        font-size:22px;
+        gap:9px;
+    }
+
+    .contact .external-icon{
+        width:18px;
+        height:18px;
+        border-radius:6px;
+    }
+}
+
+@media(max-width:390px){
+    .nav-menu a{
+        font-size:12px;
+        padding:8px 13px;
+    }
+
+    .contact .links a{
+        font-size:20px;
+    }
+}
