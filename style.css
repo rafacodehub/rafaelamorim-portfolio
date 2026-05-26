@@ -883,54 +883,46 @@ body{
     }
 }
 
-/* ===== LegalScan AI project carousel fix ===== */
 
-.projects-grid,
-.projects-list,
-.projects-container,
-.work-grid {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    gap: 24px !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-    scroll-snap-type: x mandatory !important;
-    padding-bottom: 16px !important;
-    -webkit-overflow-scrolling: touch !important;
+/* ===== Projects carousel update ===== */
+.project-grid {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 28px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scroll-snap-type: x mandatory !important;
+  -webkit-overflow-scrolling: touch !important;
+  padding-bottom: 18px !important;
 }
 
-.projects-grid::-webkit-scrollbar,
-.projects-list::-webkit-scrollbar,
-.projects-container::-webkit-scrollbar,
-.work-grid::-webkit-scrollbar {
-    height: 6px;
+.project-grid::-webkit-scrollbar {
+  height: 6px;
 }
 
-.projects-grid::-webkit-scrollbar-thumb,
-.projects-list::-webkit-scrollbar-thumb,
-.projects-container::-webkit-scrollbar-thumb,
-.work-grid::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.18);
-    border-radius: 999px;
+.project-grid::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.project-card {
-    min-width: 520px !important;
-    flex: 0 0 520px !important;
-    scroll-snap-align: start !important;
+.project-grid::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.project-grid .project-link {
+  flex: 0 0 calc((100% - 28px) / 2) !important;
+  min-width: calc((100% - 28px) / 2) !important;
+  scroll-snap-align: start !important;
 }
 
 @media (max-width: 768px) {
-    .projects-grid,
-    .projects-list,
-    .projects-container,
-    .work-grid {
-        gap: 18px !important;
-        padding-inline: 0 !important;
-    }
+  .project-grid {
+    gap: 18px !important;
+    padding-bottom: 12px !important;
+  }
 
-    .project-card {
-        min-width: 86vw !important;
-        flex-basis: 86vw !important;
-    }
+  .project-grid .project-link {
+    flex: 0 0 86vw !important;
+    min-width: 86vw !important;
+  }
 }
