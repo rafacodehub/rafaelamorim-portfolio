@@ -882,3 +882,43 @@ body{
         font-size:20px;
     }
 }
+
+
+/* =========================
+PROJECTS HORIZONTAL CAROUSEL
+========================= */
+
+.projects-grid {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+}
+
+.projects-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 999px;
+}
+
+.project-card {
+    min-width: 360px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+
+    .projects-grid {
+        gap: 18px;
+        padding-bottom: 4px;
+    }
+
+    .project-card {
+        min-width: 85%;
+    }
+}
