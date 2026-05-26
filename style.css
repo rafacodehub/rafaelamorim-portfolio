@@ -437,3 +437,225 @@ body{
         grid-template-columns:1fr;
     }
 }
+
+
+/* =============================
+   Mobile refinement v3
+   ============================= */
+@media (hover:none) and (pointer:coarse){
+    .window:hover{transform:none;}
+    .card:hover{box-shadow:none;}
+}
+
+@media(max-width:980px){
+    .window{
+        border-radius:28px;
+    }
+
+    .top-bar{
+        grid-template-columns:auto minmax(0, 1fr) auto;
+        gap:12px;
+        padding:0 20px;
+    }
+
+    .nav-menu{
+        display:flex;
+        justify-self:center;
+        max-width:100%;
+        overflow-x:auto;
+        scrollbar-width:none;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .nav-menu::-webkit-scrollbar{
+        display:none;
+    }
+
+    .nav-menu a{
+        white-space:nowrap;
+        font-size:12px;
+        padding:8px 13px;
+    }
+
+    .window-title{
+        font-size:12px;
+        max-width:160px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        min-height:auto;
+        padding:58px 34px 64px;
+        gap:34px;
+        text-align:left;
+    }
+
+    .hero-photo-wrap{
+        grid-row:1;
+        width:230px;
+        height:230px;
+        justify-self:center;
+        margin:0 0 6px;
+    }
+
+    .hero-photo{
+        width:204px;
+        height:204px;
+    }
+
+    .hero-content{
+        grid-row:2;
+    }
+
+    .hero h1{
+        font-size:clamp(44px, 12vw, 58px);
+        letter-spacing:-2.8px;
+        line-height:.94;
+    }
+
+    .subtitle{
+        font-size:17px;
+    }
+
+    .description{
+        font-size:18px;
+    }
+}
+
+@media(max-width:700px){
+    body{
+        background:
+            radial-gradient(circle at 50% 8%, rgba(43,57,79,.26), transparent 26%),
+            radial-gradient(circle at 80% 80%, rgba(42,42,48,.28), transparent 28%),
+            var(--bg);
+    }
+
+    .container{
+        padding:18px 12px;
+        align-items:flex-start;
+    }
+
+    .window{
+        border-radius:28px;
+    }
+
+    .top-bar{
+        height:auto;
+        min-height:74px;
+        grid-template-columns:1fr;
+        justify-items:center;
+        gap:12px;
+        padding:18px 16px;
+    }
+
+    .circles{
+        justify-self:start;
+        grid-row:1;
+    }
+
+    .window-title{
+        justify-self:end;
+        grid-row:1;
+        align-self:center;
+        max-width:150px;
+    }
+
+    .nav-menu{
+        grid-row:2;
+        width:100%;
+        justify-content:flex-start;
+    }
+
+    .hero{
+        padding:36px 22px 52px;
+        gap:24px;
+    }
+
+    .hero::after{
+        inset:44px 16px;
+        border-radius:34px;
+    }
+
+    .hero-photo-wrap{
+        width:184px;
+        height:184px;
+    }
+
+    .hero-photo{
+        width:164px;
+        height:164px;
+    }
+
+    .tag{
+        font-size:15px;
+        padding:9px 16px;
+        margin-bottom:20px;
+    }
+
+    .hero h1{
+        font-size:clamp(42px, 13.2vw, 52px);
+        letter-spacing:-2.4px;
+    }
+
+    .buttons,.links{
+        flex-direction:column;
+    }
+
+    .btn-primary,.btn-secondary{
+        text-align:center;
+        width:100%;
+    }
+
+    .projects,.contact{
+        padding:52px 22px;
+    }
+
+    .section-heading h2{
+        font-size:34px;
+        margin-bottom:28px;
+    }
+
+    .project-grid{
+        display:flex;
+        grid-template-columns:none;
+        gap:16px;
+        overflow-x:auto;
+        padding:0 4px 18px;
+        scroll-snap-type:x mandatory;
+        scrollbar-width:thin;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .card{
+        min-width:282px;
+        scroll-snap-align:start;
+        padding:28px;
+    }
+
+    .card h3{
+        font-size:25px;
+    }
+}
+
+@media(max-width:390px){
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero-photo-wrap{
+        width:164px;
+        height:164px;
+    }
+
+    .hero-photo{
+        width:146px;
+        height:146px;
+    }
+
+    .card{
+        min-width:260px;
+    }
+}
