@@ -98,7 +98,7 @@ body{
     grid-template-columns:minmax(0, 1.15fr) 360px;
     align-items:center;
     gap:58px;
-    contain:layout paint;
+
 }
 
 .hero::after{
@@ -106,8 +106,8 @@ body{
     position:absolute;
     inset:80px 60px;
     border-radius:42px;
-    background:linear-gradient(120deg, rgba(255,255,255,.05), transparent 42%, rgba(255,255,255,.025));
-    opacity:.38;
+    background:linear-gradient(120deg, rgba(255,255,255,.028), transparent 44%, rgba(255,255,255,.014));
+    opacity:.22;
     pointer-events:none;
 }
 
@@ -139,9 +139,21 @@ body{
     width:100%;height:100%;border-radius:50%;
     background:linear-gradient(135deg, rgba(255,255,255,.16), transparent 36%, rgba(255,255,255,.06));
     box-shadow:0 0 35px rgba(255,255,255,.045);
-    animation:floatPhoto 7s ease-in-out infinite;
+
 }
+
+.hero-photo-wrap picture{
+    display:block;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+}
+
 .hero-photo{
+    display:block;
     width:300px;height:300px;object-fit:cover;object-position:center;border-radius:50%;
     border:1px solid rgba(255,255,255,.18);
     box-shadow:0 24px 55px rgba(0,0,0,.48), inset 0 0 0 8px rgba(255,255,255,.03);
@@ -154,8 +166,6 @@ body{
 .projects,.contact{
     padding:80px;
     border-top:1px solid var(--line);
-    content-visibility:auto;
-    contain-intrinsic-size:720px;
 }
 .section-heading span{color:var(--muted);font-size:14px;text-transform:uppercase;letter-spacing:2px;}
 .section-heading h2{font-size:40px;margin-top:12px;margin-bottom:40px;}
@@ -185,7 +195,7 @@ body{
     padding:35px;
     transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
     transform:translateZ(0);
-    contain:layout paint;
+
 }
 .card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.20);box-shadow:0 18px 42px rgba(0,0,0,.30);}
 .card span{color:var(--muted);font-size:14px;}
@@ -212,6 +222,7 @@ body{
     .window-title{font-size:12px;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
     .hero{grid-template-columns:1fr;min-height:auto;padding:58px 34px 64px;gap:34px;}
     .hero-photo-wrap{grid-row:1;width:230px;height:230px;margin:0 auto 6px;}
+    .hero-photo-wrap picture{width:204px;height:204px;}
     .hero-photo{width:204px;height:204px;}
     .hero-content{grid-row:2;}
     .hero h1{font-size:clamp(44px,12vw,58px);letter-spacing:-2.8px;line-height:.94;}
@@ -231,13 +242,14 @@ body{
     .hero::after{inset:44px 16px;border-radius:34px;}
     .hero-content{display:flex;flex-direction:column;align-items:center;}
     .hero-photo-wrap{width:184px;height:184px;}
+    .hero-photo-wrap picture{width:164px;height:164px;}
     .hero-photo{width:164px;height:164px;}
     .tag{font-size:15px;padding:9px 16px;margin-bottom:20px;}
     .hero h1{font-size:clamp(42px,13.2vw,52px);letter-spacing:-2.4px;text-align:center;}
     .buttons,.links{flex-direction:column;}
     .btn-primary,.btn-secondary{text-align:center;width:100%;}
-    .projects,.contact{padding:52px 22px;contain-intrinsic-size:620px;}
-    .section-heading h2{font-size:34px;margin-bottom:28px;}
+    .projects,.contact{padding:52px 22px;}
+.section-heading h2{font-size:34px;margin-bottom:28px;}
     .project-grid{gap:18px;padding-bottom:12px;}
     .project-grid .project-link{flex:0 0 86vw;min-width:86vw;}
     .card{padding:28px;text-align:left;}
@@ -249,6 +261,7 @@ body{
 @media(max-width:390px){
     .hero h1{font-size:40px;}
     .hero-photo-wrap{width:164px;height:164px;}
+    .hero-photo-wrap picture{width:146px;height:146px;}
     .hero-photo{width:146px;height:146px;}
     .project-grid .project-link{flex-basis:82vw;min-width:82vw;}
     .nav-menu a{font-size:12px;padding:8px 13px;}
