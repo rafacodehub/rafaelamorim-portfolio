@@ -1031,3 +1031,132 @@ picture{
         will-change:auto;
     }
 }
+
+/* =====================================================
+   Ultra smooth scroll patch
+   Foco: remover pinturas caras durante a rolagem.
+   ===================================================== */
+*{
+    scroll-behavior:auto;
+}
+
+html{
+    scroll-behavior:auto;
+}
+
+body{
+    background:var(--bg);
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-3;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 14% 28%, rgba(43,57,79,.24), transparent 30%),
+        radial-gradient(circle at 87% 68%, rgba(42,42,48,.24), transparent 30%),
+        var(--bg);
+}
+
+.grain,
+.blur{
+    display:none !important;
+}
+
+.window{
+    background:rgba(15,15,15,.94);
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+    contain:none;
+    box-shadow:0 18px 48px rgba(0,0,0,.48);
+    transition:none;
+}
+
+.window:hover{
+    transform:none;
+}
+
+.hero::after{
+    opacity:.22;
+    background:linear-gradient(120deg, rgba(255,255,255,.035), transparent 44%, rgba(255,255,255,.018));
+}
+
+.photo-orbit{
+    animation:none !important;
+    filter:none;
+    opacity:.65;
+}
+
+.hero-photo-wrap:hover .hero-photo,
+.btn-primary:hover,
+.btn-secondary:hover,
+.links a:hover,
+.project-link:hover .open-label{
+    transform:none;
+}
+
+.hero-photo,
+.card,
+.btn-primary,
+.btn-secondary,
+.links a,
+.nav-menu a,
+.open-label{
+    will-change:auto !important;
+    backface-visibility:visible;
+    transform:none;
+}
+
+.card{
+    transform-style:flat;
+    transition:border-color .18s ease, background .18s ease;
+}
+
+.card:hover{
+    box-shadow:none;
+    background:#121212;
+}
+
+.reveal{
+    transform:translate3d(0,18px,0);
+    transition:opacity .38s ease, transform .38s ease;
+    will-change:auto;
+}
+
+.projects,
+.contact{
+    content-visibility:auto;
+    contain-intrinsic-size:1px 620px;
+}
+
+.project-grid{
+    scroll-snap-type:none !important;
+    overscroll-behavior-inline:contain;
+}
+
+.project-grid .project-link{
+    scroll-snap-align:none !important;
+}
+
+@media(max-width:700px){
+    body::before{
+        background:
+            radial-gradient(circle at 50% 8%, rgba(43,57,79,.18), transparent 28%),
+            var(--bg);
+    }
+
+    .hero::after{
+        display:none;
+    }
+
+    .window{
+        box-shadow:0 12px 34px rgba(0,0,0,.42);
+    }
+
+    .projects,
+    .contact{
+        contain-intrinsic-size:1px 720px;
+    }
+}
