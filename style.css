@@ -926,3 +926,108 @@ body{
     min-width: 86vw !important;
   }
 }
+
+/* =============================
+   Performance refinement
+   - keeps the same visual identity
+   - reduces paint/reflow cost
+   ============================= */
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+}
+
+.window{
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    contain:layout paint style;
+}
+
+.blur{
+    filter:blur(72px);
+    opacity:.78;
+    transform:translateZ(0);
+}
+
+.grain{
+    opacity:.045;
+}
+
+.hero::after,
+.photo-orbit,
+.hero-photo,
+.card,
+.btn-primary,
+.btn-secondary,
+.links a,
+.nav-menu a{
+    backface-visibility:hidden;
+    transform:translateZ(0);
+}
+
+.card{
+    will-change:transform;
+    transition:transform .24s ease, border-color .24s ease, box-shadow .24s ease, background .24s ease;
+}
+
+.card:hover{
+    box-shadow:0 16px 42px rgba(0,0,0,.30);
+}
+
+.reveal{
+    transform:translate3d(0,28px,0);
+    transition:opacity .7s ease, transform .7s ease;
+    will-change:opacity, transform;
+}
+
+.reveal.active{
+    transform:translate3d(0,0,0);
+}
+
+picture{
+    display:grid;
+    place-items:center;
+}
+
+.hero-photo{
+    display:block;
+}
+
+@media (prefers-reduced-motion: reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+    }
+}
+
+@media(max-width:700px){
+    .window{
+        backdrop-filter:blur(8px);
+        -webkit-backdrop-filter:blur(8px);
+    }
+
+    .blur{
+        filter:blur(48px);
+        opacity:.55;
+    }
+
+    .grain{
+        display:none;
+    }
+
+    .photo-orbit{
+        animation:none;
+    }
+
+    .card{
+        will-change:auto;
+    }
+}
