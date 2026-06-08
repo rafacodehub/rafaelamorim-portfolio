@@ -15,6 +15,11 @@
 
 html{
     scroll-behavior:smooth;
+    background:#050505;
+}
+
+html, body{
+    background-color:#050505;
 }
 
 body{
@@ -50,8 +55,9 @@ body{
     border:1px solid var(--line);
     border-radius:30px;
     overflow:hidden;
-    box-shadow:0 24px 70px rgba(0,0,0,.48);
-    transform:translateZ(0);
+    box-shadow:0 24px 70px rgba(0,0,0,.42);
+    isolation:isolate;
+    contain:paint;
 }
 
 .top-bar{
@@ -106,8 +112,8 @@ body{
     position:absolute;
     inset:80px 60px;
     border-radius:42px;
-    background:linear-gradient(120deg, rgba(255,255,255,.028), transparent 44%, rgba(255,255,255,.014));
-    opacity:.22;
+    background:linear-gradient(120deg, rgba(255,255,255,.018), transparent 44%, rgba(255,255,255,.008));
+    opacity:.16;
     pointer-events:none;
 }
 
@@ -158,7 +164,6 @@ body{
     border:1px solid rgba(255,255,255,.18);
     box-shadow:0 24px 55px rgba(0,0,0,.48), inset 0 0 0 8px rgba(255,255,255,.03);
     transition:transform .25s ease;
-    transform:translateZ(0);
 }
 .hero-photo-wrap:hover .hero-photo{transform:scale(1.025);}
 @keyframes floatPhoto{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-8px,0)}}
@@ -194,7 +199,6 @@ body{
     border-radius:24px;
     padding:35px;
     transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
-    transform:translateZ(0);
 
 }
 .card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.20);box-shadow:0 18px 42px rgba(0,0,0,.30);}
@@ -210,8 +214,22 @@ body{
 .links a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#d4d4d8;font-size:18px;transition:color .2s ease, transform .2s ease;}
 .links a:hover{color:white;transform:translateY(-2px);}
 
-.reveal{opacity:0;transform:translate3d(0,28px,0);transition:opacity .65s ease, transform .65s ease;}
-.reveal.active{opacity:1;transform:translate3d(0,0,0);}
+.reveal{opacity:1;transform:none;}
+.reveal.active{opacity:1;transform:none;}
+
+.projects,.contact,.hero,.top-bar{
+    background-color:transparent;
+}
+
+/* Evita flash branco de repintura no Chrome durante o scroll */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    background:#050505;
+}
 
 @media(max-width:980px){
     .container{padding:24px 14px;}
